@@ -1206,9 +1206,17 @@
 \csuse{\fmt@name @load@ps@headings}
 
 % stubs for xelatex
-\def\headerps@out#1{}
-\newbox\pdf@box
-\newtoks\pdf@addtoksx
+\ifdefined\headerps@out\else
+  \def\headerps@out#1{}%
+\fi
+\AtBeginDocument{%
+  \ifdefined\pdf@box\else
+    \newbox\pdf@box
+  \fi
+  \ifdefined\pdf@addtoksx\else
+    \newtoks\pdf@addtoksx
+  \fi
+  }
 
 %% empty RH
 \def\ps@empty{%
