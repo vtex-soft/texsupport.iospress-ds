@@ -4135,59 +4135,6 @@
 \def\bprice#1{#1}
 %% <<< book-review <<<
 
-% >>> line numbers grid from imsart.sty >>>
-\long\def\l@addto@macro#1#2{%
-  \toks@\expandafter{#1#2}%
-  \edef#1{\the\toks@}%
-  }
-
-\setpkgattr{numberlines}{size}{\scriptsize\ttfamily}
-\setpkgattr{numberlines}{skip}{24\p@}
-
-\def\numberlines@hook{%
-  \l@addto@macro\@evenhead\put@numberlines@box
-  \l@addto@macro\@oddhead\put@numberlines@box
-  }
-
-\g@addto@macro\ps@copyright\numberlines@hook
-%\g@addto@macro\ps@headings\numberlines@hook
-
-\newbox\numberlines@box
-\newskip\numberlines@box@skip
-
-\def\set@numberlines@box{%
-  \setlength\numberlines@box@skip\headsep
-  \addtolength\numberlines@box@skip{5\p@}%
-  %
-  \setbox\numberlines@box\vtop to\textheight{%
-    \parindent\z@    
-    \vskip\z@   
-    \@tempcnta=0
-    \@tempdima=\z@
-    \loop
-      \advance\@tempcnta by1
-      \advance\@tempdima by\baselineskip
-      \hbox to\textwidth{%
-         \llap{\numberlines@size\the\@tempcnta\kern\numberlines@skip}%
-         \hfill
-         \rlap{\numberlines@size\kern\numberlines@skip\the\@tempcnta}%
-         }%
-      \ifdim\@tempdima<\textheight\repeat
-    \vss
-    }%
-  %
-  \ht\numberlines@box\z@
-  \dp\numberlines@box\z@
-  }
-
-\def\put@numberlines@box{\lower\numberlines@box@skip\hbox to\z@{\hss\copy\numberlines@box}}
-
-\AtBeginDocument{%
-  \set@numberlines@box
-  \numberlines@hook
-  }
-% <<< line numbers <<<
-
 \endinput
 %%
 %% End of file `iosart2x.cls'.
