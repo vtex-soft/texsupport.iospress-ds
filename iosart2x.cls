@@ -58,8 +58,8 @@
 %%
 
 \def\fmt@name{iosart2x}
-\def\fmt@date{2018/05/30}
-\def\fmt@version{1.1.27}
+\def\fmt@date{2019/05/06}
+\def\fmt@version{1.3.10}
 \NeedsTeXFormat{LaTeX2e}[2000/01/26]
 \ProvidesClass\fmt@name
               [\fmt@date\space v\fmt@version\space IOS Press]
@@ -1178,6 +1178,11 @@
 \DeclareMathSizes{12}{12}{\@viiipt}{\@viipt}
 
 \csuse{\fmt@name @load@ps@headings}
+
+% stubs for xelatex
+\def\headerps@out#1{}
+\newbox\pdf@box
+\newtoks\pdf@addtoksx
 
 %% empty RH
 \def\ps@empty{%
