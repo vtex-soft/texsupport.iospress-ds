@@ -31,10 +31,10 @@
 %Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1,o1}}
 
 % Two or more authors:
+\begin{aug}
 \author[A]{\inits{N.}\fnms{Name1} \snm{Surname1}\ead[label=e1]{first@somewhere.com}\ead[label=o1,orcid]{0000-0000-0000-0001}%
-\thanks{Corresponding author. \printead{e1}.}},
+\thanks{Corresponding author. \printead{e1}.}}
 \author[B]{\inits{N.N.}\fnms{Name2 Name2} \snm{Surname2}\ead[label=e2]{second@somewhere.com}\ead[label=o2,orcid]{0000-0000-0000-0002}}
-and
 \author[C]{\inits{N.-N.}\fnms{Name3-Name3} \snm{Surname3}\ead[label=e3]{third@somewhere.com}\ead[label=o3,orcid]{0000-0000-0000-0003}}
 \address[A]{Department first, \orgname{University or Company name},
 Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1,o1}}
@@ -42,6 +42,7 @@ Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1,o1}}
 Abbreviate US states, \cny{Country}\printead[presep={\\}]{e2,o2}}
 \address[C]{Department first, \orgname{University or Company name},
 Abbreviate US states, \cny{Country}\printead[presep={\\}]{e3,o3}}
+\end{aug}
 
 %\begin{review}{editor}
 %\reviewer{\fnms{First} \snm{Editor}\ead[label=oe1,orcid]{}\printead[presep={\ }]{oe1}}
@@ -104,7 +105,7 @@ Abstract text.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\nocite{*} 
+\nocite{*}
 % if your bibliography is in bibtex format, use those commands:
 \bibliographystyle{ios1}           % Style BST file.
 \bibliography{bibliography}        % Bibliography file (usually '*.bib')
